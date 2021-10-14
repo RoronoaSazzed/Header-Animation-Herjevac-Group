@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Text Slide In Animation</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .bannerTitle {
+        text-transform: uppercase;
+        font-family: "Montserrat", sans-serif;
+        font-size: clamp(35px, 5vw, 60px);
+        letter-spacing: 1px;
+        font-weight: 700;
+        font-style: italic;
+      }
+
+      .bannerTitle img {
+        width: 150px;
+        max-width: 50%;
+      }
+
+      .parentDiv {
+        background-color: lightgray;
+        padding: 30px;
+      }
+
+      .slidingLeach {
+        position: relative;
+        height: 50px;
+        width: auto;
+        overflow: hidden;
+      }
+
+      .slidingLeach .bannerTitle {
+        line-height: 50px;
+      }
+
+      .marker {
+        display: inline-block;
+        transform: translateY(-200px);
+        animation: slidIn 8s ease-in-out infinite forwards;
+      }
+
+      @keyframes slidIn {
+        5%,
+        25% {
+          transform: translateY(-150px);
+        }
+        30%,
+        50% {
+          transform: translateY(-100px);
+        }
+        55%,
+        75% {
+          transform: translateY(-50px);
+        }
+
+        80%,
+        100% {
+          transform: translateY(0px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parentDiv">
+      <div class="contentDiv">
+        <h3 class="bannerTitle">
+          <img src="checkboard.png" alt="" /> keep your
+        </h3>
+        <div class="slidingLeach">
+          <div class="marker">
+            <h3 class="bannerTitle">World</h3>
+            <h3 class="bannerTitle">Enterprise</h3>
+            <h3 class="bannerTitle">Budget</h3>
+            <h3 class="bannerTitle">Defense</h3>
+          </div>
+        </div>
+        <h3 class="bannerTitle">on track <img src="lockup.png" alt="" /></h3>
+      </div>
+    </div>
+  </body>
+</html>
